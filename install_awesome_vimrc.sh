@@ -1,14 +1,15 @@
-cd ~/.vim_runtime
+cd $(dirname $0)
+VIMRC=$PWD
 
-echo 'set runtimepath+=~/.vim_runtime
+echo 'set runtimepath+='$VIMRC'
 
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+source '$VIMRC'/vimrcs/basic.vim
+source '$VIMRC'/vimrcs/filetypes.vim
+source '$VIMRC'/vimrcs/plugins_config.vim
+source '$VIMRC'/vimrcs/extended.vim
 
 try
-source ~/.vim_runtime/my_configs.vim
+source '$VIMRC'/my_configs.vim
 catch
 endtry' > ~/.vimrc
 
